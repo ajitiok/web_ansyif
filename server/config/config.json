@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "admin",
+    "database": "database_development_websyifa",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
