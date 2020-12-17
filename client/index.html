@@ -1,11 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AndSheef Project</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d5deb0489d.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>AndSheef Project</title>
+
+  <style type="text/css">
+    @font-face {
+      font-family: "RifficFree";
+      src: url("src/fonts/RifficFree-Bold.ttf");
+    }
+  </style>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/stylesheet.css" rel="stylesheet">
+
 </head>
-<body>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" onClick="backToHome()">AndSheef</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a id="nav-about" class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-product" class="nav-link js-scroll-trigger" href="#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-contact" class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button id="addProduct" type="button" class="btn btn-primary" onClick="toFormAdd()">Add Product</button>
+          </li>
+          <li class="nav-item" id="loginButton">
+            <button type="button" class="btn btn-primary ml-3 " data-toggle="modal" data-target="#exampleModal">
+              Log in
+            </button>
+          </li>
+          <li class="nav-item" id="logoutButton">
+            <button type="button" class="btn btn-danger ml-3" onClick="logOut()">
+              Log out
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- page Add product -->
+    <section id="formaddProduct" class="bg-light ">
+      <div class="container ">
+        <div>
+          <h1>Add Product</h1>
+        </div>
+        <form onsubmit="addProduct(event)">
+          <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="inputTitle" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputDesc" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputDesc">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPict" class="col-sm-2 col-form-label">Picture</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="" id="inputPict">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPrice" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-2">
+              <input type="number" class="form-control" name="" id="inputPrice">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPrice" class="col-sm-2 col-form-label">Tag</label>
+            <div class="col-sm-2">
+              <select name="" id="inputTag" class="form-control">
+                <option default>Choose your Tag</option>
+                <option value="logo">Logo</option>
+                <option value="label">Label</option>
+                <option value="wedding">Wedding Invitation</option>
+                <option value="babyname">Baby Name Card</option>
+                <option value="bookcover">Book Cover</option>
+                <option value="hangtag">Hang Tag</option>
+                <option value="pricelist">Price List</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row mt-4">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Add Product</button>
+              <button type="reset" class="btn btn-danger ml-3">Reset</button>
+              <button type="reset" class="btn btn-danger ml-3" onClick="backToHome()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section> 
+
+
+
+  <header class="text-dark">
+    <div class="bg-blue">
+
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#9ddfd3" fill-opacity="1" d="M0,96L60,117.3C120,139,240,181,360,208C480,235,600,245,720,208C840,171,960,85,1080,53.3C1200,21,1320,43,1380,53.3L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+    <div class="container">
+      <h1>Welcome to AndSheef Project</h1>
+      <p class="lead">Design with Us</p>
+      <button class="btn btn-primary">Contact Us</button>
+    </div>
     
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="card mb-3 border-0 bg-transparent">
+        <div class="row no-gutters ">
+          <div class="col-md-8 d-flex align-items-center ">
+            <div class="card-body ">
+              <h5 class="card-title">AndSheef Project</h5>
+              <p class="card-text">This is all about design. You can make all design with us . And You can see all Project us maked. If you deal with us , you can contact us with link in contact. </p>
+              <p class="card-text"><small class="text-muted">Abu Abdillah - Owner</small></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="./src/pict/logo-02.png" class="card-img" alt="image">
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+  <div class="blob2">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#9DDFD3" d="M28.8,-31.4C33.5,-17,30.9,-5.3,30.7,11.5C30.4,28.2,32.5,50,23.6,57.5C14.7,65.1,-5.1,58.5,-20.9,48.8C-36.7,39.1,-48.4,26.4,-49,14C-49.6,1.5,-39.2,-10.7,-29.2,-26.3C-19.2,-41.8,-9.6,-60.7,1.2,-61.7C12,-62.7,24,-45.7,28.8,-31.4Z" transform="translate(100 100)" />
+    </svg>
+  </div>
+
+  <section id="product" class="bg-light ">
+    <div class="container">
+      <h1 class="mb-4 d-flex justify-content-center border-bottom mb-2 p-2">Product</h1>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-success m-2" onClick="seeAllProduct()">See All Product</button>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3" >
+
+        <div class="col mb-3">
+          <div class="card">
+            <img src="./src/pict/Wedding-02.png" class="card-img-top w-100" alt="">
+            <div class="card-body d-flex justify-content-between">
+              <h3 class="card-title">Wedding Invitation</h3>
+              <small class="text-muted mt-2">Rp. 120.000,00 </small>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Design Kartu Undangan Pernikahan</p>
+              <div>
+                <small class="text-muted mt-2">Tag : Wedding Invitation </small>
+              </div>
+            </div> 
+          </div>
+        </div>  
+
+        <div class="col mb-3">
+          <div class="card">
+            <img src="./src/pict/logo-02.png" class="card-img-top w-100" alt="">
+            <div class="card-body d-flex justify-content-between">
+              <h3 class="card-title">Design Product</h3>
+              <small class="text-muted mt-2">Rp. 100.000,00 </small>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Design Produk Herbal</p>
+              <div>
+                <small class="text-muted mt-2">Tag : Label Design </small>
+              </div>
+            </div> 
+          </div>
+        </div>  
+
+        <div class="col mb-3">
+          <div class="card">
+            <img src="./src/pict/LabelDesign-02.png" class="card-img-top w-100" alt="">
+            <div class="card-body d-flex justify-content-between">
+              <h3 class="card-title">Design Logo</h3>
+              <small class="text-muted mt-2">Rp. 150.000,00 </small>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Design Logo Produk </p>
+              <div>
+                <small class="text-muted mt-2">Tag : Logo </small>
+              </div>
+            </div> 
+          </div>
+        </div>  
+
+      </div>
+    </div>
+  </section>
+
+  <section id="page-list-product">
+    <div class="container">
+      <button class="btn btn-link" onClick="backToHome()">Back to Home</button>
+      <h1 class="d-flex justify-content-center mb-4">List Product</h1>
+
+      <!-- buttn filter -->
+      <div class="btn-container mb-3">
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="all">All</button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="logo">Logo</button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="label">Label</button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="wedding">Wedding Invitation</button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="babyname">Baby Name </button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="bookcover">Book Cover</button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="hangtag">Hang Tag</button>
+        <button class="btn btn-outline-dark filter-btn" type="button" data-id="pricelist">Menu</button>
+      </div>
+
+      <div id="container-image" class="row row-cols-1 row-cols-md-3">
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <p class="lead">Office : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+          <p>Google Maps</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="py-1 bg-dark">
+    <div id="footer-text" class="container">
+      <p class="m-0 text-center text-white">&copy; Copyright - 2020 | created by Abdan </p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  
+  <!-- modal LOGIN -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="login(event)">
+            <div class="form-group">
+              <label for="InputEmail">Email address</label>
+              <input type="email" class="form-control" id="InputEmail"  placeholder="email@mail.com">
+            </div>
+            <div class="form-group">
+              <label for="InputPassword">Password</label>
+              <input type="password" class="form-control" id="InputPassword" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-primary rounded-sm">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- akhir dari modal -->
+  
+  
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/index.js"></script>
+
 </body>
+
 </html>
